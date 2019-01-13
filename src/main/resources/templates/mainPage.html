@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>homeai mainPage</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/mainPage.css}" />
+</head>
+<body>
+    <header class="text-center">
+        <h1>hello,I'm coco</h1>
+    </header>
+    <div id="homeaiNav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#" v-on:click="loadModule()">calendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" v-on:click="loadModule()">tool</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" v-on:click="loadModule('userManage/init')">user Manage</a></li>
+            </ul>
+        </nav>
+        <!--         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"> Dropdown </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div> -->
+        <div>
+            <iframe :src="src" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <script type="text/javascript">
+        ctxPath = '[[@{/}]]';
+        homeAiLoadJs([ 'js/mainPage.js' ]);
+    </script>
+</body>
+</html>
