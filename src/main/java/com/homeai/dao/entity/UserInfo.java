@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 /**
  * The persistent class for the user_info database table.
- * 
+ *
  */
 @Entity
 @Table(name="user_info")
