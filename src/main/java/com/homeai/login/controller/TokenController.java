@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.homeai.login.dao.entity.UserInfo;
-import com.homeai.login.dao.service.UserInfoService;
+import com.homeai.dao.entity.UserInfo;
+import com.homeai.dao.service.UserInfoService;
 import com.homeai.login.pojo.AccountInfo;
 import com.homeai.login.pojo.User;
 

@@ -1,6 +1,7 @@
 package com.homeai.usermanage.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserManageController {
 
     @RequestMapping(value="/init", method=RequestMethod.GET)
-    public String init() {
+    public String init(Model model) {
 
         return "/userManage";
     }
