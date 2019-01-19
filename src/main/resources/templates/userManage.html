@@ -2,46 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>homeai login</title>
+<title>homeai userManage</title>
 <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{/css/userManage.css}" />
 </head>
 <body>
-usermanage
-    <!-- <form th:action="@{/mainPage/init}" th:object="${accountInfo}" method="get">
-    <div id="loginContainerDiv" class="container-fluid">
-        <div class="row row-margin-top home-ai-title">
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 page-header text-center">
-                <h1>HOME AI SYSTEM</h1>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-        </div>
-        <div class="row row-margin-top">
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                <input type="text" v-model="account" placeholder="please input account here..." />
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-        </div>
-        <div class="row row-margin-top">
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                <input type="password" v-model="password" placeholder="please input password here..." />
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-        </div>
-        <div class="row row-margin-top">
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                <button type="button" class="btn" v-on:click="login">Login</button>
-                <button type="button" class="btn">Register</button>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
-        </div>
-    </div>
-    </form> -->
+    <table>
+        <tr th:each="userInfo:${userInfoList}">
+        	<td th:text="${userInfo.getAccoutHa()}"></td>
+        	<td th:text="${userInfo.getNameHa()}"></td>
+        	<td th:text="${userInfo.getAgeHa()}"></td>
+        	<td th:text="${userInfo.getSex()}"></td>
+        	<td th:text="${userInfo.getSysLv()}"></td>
+        	<td th:text="${userInfo.getPasswordHa()}"></td>
+        </tr>
+    </table>
     <script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
     <script type="text/javascript" th:src="@{/js/common.js}"></script>
     <script type="text/javascript">
