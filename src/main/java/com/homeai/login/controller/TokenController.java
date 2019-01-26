@@ -4,6 +4,7 @@
 package com.homeai.login.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,7 @@ public class TokenController {
     private UserInfoService userInfoService;
 
     @RequestMapping(method = RequestMethod.GET)
+    @Cacheable(value="userToken")
     public User getToken(AccountInfo accountInfo) {
 
         User user = new User();
