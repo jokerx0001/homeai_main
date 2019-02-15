@@ -36,4 +36,10 @@ public class HomeAiMainController {
     	model.addAttribute("userInfoList", userInfoList);
         return "/userManage";
     }
+
+    @RequestMapping(value="/userRegister", method=RequestMethod.GET)
+    public String initUserRegister() {
+
+        return "/userRegister";
+    }
 }

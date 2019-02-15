@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>homeai register</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" />
+</head>
+<body>
+	<form th:action="@{/login}" th:object="${userRegister}" method="get">
+	<div id="registerContainerDiv" class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<span>Account</span>
+				<div class="col-lg-4">
+					<input type="text" v-model="account" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<span>Password</span>
+				<div class="col-lg-4">
+					<input type="text" v-model="password" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<span>Name</span>
+				<div class="col-lg-4">
+					<input type="text" v-model="name" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<span>Sex</span>
+				<div class="col-lg-4">
+				    <span>male</span>
+					<input type="radio" value="0" v-model="sex" />
+					<span>female</span>
+				    <input type="radio"
+						value="1" v-model="sex" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<span>Age</span>
+				<div class="col-lg-4">
+					<input type="text" v-model="age" />
+				</div>
+			</div>
+		</div>
+		<div class="row row-margin-top">
+            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
+            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
+                <button type="button" class="btn" v-on:click="register">Register</button>
+                <button type="submit" class="btn">cancel</button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
+        </div>
+		<script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
+		<script type="text/javascript" th:src="@{/js/common.js}"></script>
+		<script type="text/javascript">
+        ctxPath = '[[@{/}]]';
+        homeAiLoadJs(['js/register.js']);
+    </script>
+	</div>
+	</form>
+</body>
+</html>

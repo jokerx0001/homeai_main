@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.homeai.dao.entity.UserInfo;
 import com.homeai.dao.repository.UserInfoRepository;
 import com.homeai.dao.service.UserInfoService;
+import com.homeai.login.pojo.User;
 
 @Service
 public class UserInfoJpaServiceImpl implements UserInfoService {
@@ -25,5 +26,11 @@ public class UserInfoJpaServiceImpl implements UserInfoService {
 	public List<UserInfo> searchAllUserInfo() {
 
 		return userInfoRepository.findAll();
+	}
+
+	@Override
+	public UserInfo insertUser(UserInfo userInfo) {
+
+		return userInfoRepository.save(userInfo);
 	}
 }
