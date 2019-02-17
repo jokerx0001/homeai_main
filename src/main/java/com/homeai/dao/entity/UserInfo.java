@@ -1,5 +1,7 @@
 package com.homeai.dao.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -15,7 +17,6 @@ public class UserInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name="ACCOUT_HA")
 	private String accoutHa;
 

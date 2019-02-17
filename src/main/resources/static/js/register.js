@@ -1,8 +1,8 @@
 /**
- * login.js
+ * register.js
  */
 
-var loginContainerVue = new Vue({
+var registerContainerVue = new Vue({
     el : '#registerContainerDiv',
     data : {
         account: '',
@@ -13,17 +13,20 @@ var loginContainerVue = new Vue({
     },
     methods : {
     	register : function() {
-            var that = this;
+
             $.ajax({
-                type : 'GET',
-                url : ctxPath + 'token',
+                type : 'PUT',
+                url : ctxPath + 'user',
                 dataType : 'json',
                 data : {
                     account : this.account,
-                    password : this.password
+                    password : this.password,
+                    name : this.name,
+                    age : this.age,
+                    sex : this.sex
                 },
                 success : function(data) {
-                    // TODO
+
                     console.log(data);
                     $("form").submit();
                 },

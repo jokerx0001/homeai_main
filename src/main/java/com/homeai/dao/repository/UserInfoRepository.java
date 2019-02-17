@@ -9,9 +9,9 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     /**
      * findByAccoutHaAndPasswordHa
      *
-     * @param accoutHa
-     * @param passwordHa
-     * @return
+     * @param accoutHa account
+     * @param passwordHa password
+     * @return inserted object
      */
-    public UserInfo findByAccoutHaAndPasswordHa(String accoutHa, String passwordHa);
+    UserInfo findByAccoutHaAndPasswordHa(String accoutHa, String passwordHa);
 }
