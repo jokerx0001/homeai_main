@@ -18,6 +18,14 @@ public interface UserInfoService {
 
     /**
      *
+     *
+     * @param account
+     * @return
+     */
+    public UserInfo searchUserInfo(String account);
+
+    /**
+     *
      * @return
      */
     public List<UserInfo> searchAllUserInfo();

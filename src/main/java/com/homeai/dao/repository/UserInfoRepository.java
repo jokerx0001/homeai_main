@@ -14,4 +14,11 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
      * @return inserted object
      */
     UserInfo findByAccoutHaAndPasswordHa(String accoutHa, String passwordHa);
+
+    /**
+     *
+     * @param accoutHa
+     * @return
+     */
+    UserInfo findByAccoutHa(String accoutHa);
 }

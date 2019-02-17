@@ -1,15 +1,21 @@
 /**
- * mainPage.js
+ * userManage.js
  */
 
-var mainPageNavVue = new Vue({
-    el : '#homeaiNav',
+var userManageVue = new Vue({
+    el : '#userManageContainer',
     data : {
-        src: ''
+        selectUser: '',
+        disUserFlg: false,
+        name: '',
+        sex: '',
+        age: '',
+        level: ''
     },
     methods : {
-        loadModule : function(url) {
-            this.src = ctxPath + url;
+        detail : function() {
+
+            this.disUserFlg = true
         }
     }
 })

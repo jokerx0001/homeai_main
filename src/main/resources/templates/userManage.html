@@ -8,16 +8,61 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/userManage.css}" />
 </head>
 <body>
-    <table>
-        <tr th:each="userInfo:${userInfoList}">
-        	<td th:text="${userInfo.getAccoutHa()}"></td>
-        	<td th:text="${userInfo.getNameHa()}"></td>
-        	<td th:text="${userInfo.getAgeHa()}"></td>
-        	<td th:text="${userInfo.getSex()}"></td>
-        	<td th:text="${userInfo.getSysLv()}"></td>
-        	<td th:text="${userInfo.getPasswordHa()}"></td>
-        </tr>
-    </table>
+    <div id="userManageContainer">
+        <div>
+            <table>
+                <tr th:each="userInfo:${userInfoList}">
+                    <td><input type="radio" v-mode="selectUser" th:value="${userInfo.getAccoutHa()}" /></td>
+                    <td th:text="${userInfo.getAccoutHa()}"></td>
+                    <td th:text="${userInfo.getNameHa()}"></td>
+                    <td th:text="${userInfo.getAgeHa()}"></td>
+                    <td th:text="${userInfo.getSex()}"></td>
+                    <td th:text="${userInfo.getSysLv()}"></td>
+                    <td th:text="${userInfo.getPasswordHa()}"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button type="button" class="btn" v-on:click="detail">detail</button>
+        </div>
+        <div v-if="disUserFlg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <span>Name</span>
+                        <input type="text" v-model="name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <span>Sex</span>
+                        <span>male</span>
+                        <input type="radio" value="0" v-model="sex" />
+                        <span>female</span>
+                        <input type="radio" value="1" v-model="sex" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <span>Age</span>
+                        <input type="text" v-model="age" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <span>Level</span>
+                        <input type="text" v-model="level" />
+                    </div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-lg-4 text-center">
+                        <button type="button" class="btn" v-on:click="update">update</button>
+                        <button type="button" class="btn" v-on:click="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
     <script type="text/javascript" th:src="@{/js/common.js}"></script>
     <script type="text/javascript">

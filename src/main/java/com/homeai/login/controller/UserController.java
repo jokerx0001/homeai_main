@@ -28,11 +28,11 @@ public class UserController {
     private UserInfoService userInfoService;
 
     @RequestMapping(method = RequestMethod.GET)
-    @Cacheable(value="userToken")
-    public User getToken(AccountInfo accountInfo) {
+    public ServerResult getUser(String account) {
 
+        ServerResult serverResult = new ServerResult();
         User user = new User();
-        UserInfo userInfo = userInfoService.loginSearch(accountInfo.getAccount(), accountInfo.getPassword());
+        UserInfo userInfo = userInfoService.searchUserInfo(account);
 
         if (userInfo != null) {
 
@@ -40,9 +40,13 @@ public class UserController {
             user.setAge(userInfo.getAgeHa());
             user.setSex(userInfo.getSex());
             user.setSysLv(userInfo.getSysLv());
+
+            serverResult.setStatus(0);
+            serverResult.setMessage("");
+            serverResult.setData(user);
         }
 
-        return user;
+        return serverResult;
     }
 
     @RequestMapping(method = RequestMethod.PUT)

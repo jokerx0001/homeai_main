@@ -17,8 +17,8 @@ var loginContainerVue = new Vue({
 				url : ctxPath + 'token',
 				dataType : 'json',
 				data : {
-					account : this.account,
-					password : this.password
+					account : that.account,
+					password : that.password
 				},
 				success : function(data) {
 					// TODO
