@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.homeai.dao.entity.UserInfo;
 import com.homeai.dao.repository.UserInfoRepository;
 import com.homeai.dao.service.UserInfoService;
-import com.homeai.login.pojo.User;
 
 @Service
 public class UserInfoJpaServiceImpl implements UserInfoService {
