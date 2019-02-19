@@ -21,24 +21,37 @@ public class UserInfoJpaServiceImpl implements UserInfoService {
         return userInfoRepository.findByAccoutHaAndPasswordHa(account, password);
     }
 
-	/**
-	 * @param account
-	 * @return
-	 */
-	@Override
-	public UserInfo searchUserInfo(String account) {
-		return userInfoRepository.findByAccoutHa(account);
-	}
+    /**
+     * @param account
+     * @return
+     */
+    @Override
+    public UserInfo searchUserInfo(String account) {
 
-	@Override
-	public List<UserInfo> searchAllUserInfo() {
+        return userInfoRepository.findByAccoutHa(account);
+    }
 
-		return userInfoRepository.findAll();
-	}
+    @Override
+    public List<UserInfo> searchAllUserInfo() {
 
-	@Override
-	public UserInfo insertUser(UserInfo userInfo) {
+        return userInfoRepository.findAll();
+    }
 
-		return userInfoRepository.save(userInfo);
-	}
+    @Override
+    public UserInfo insertUser(UserInfo userInfo) {
+
+        return userInfoRepository.save(userInfo);
+    }
+
+    @Override
+    public UserInfo updateUser(UserInfo userInfo) {
+
+        return userInfoRepository.save(userInfo);
+    }
+
+    @Override
+    public void deleteUser(String account) {
+
+        userInfoRepository.deleteByAccoutHa(account);
+    }
 }

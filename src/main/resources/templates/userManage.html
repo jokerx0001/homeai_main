@@ -1,73 +1,84 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8" />
-<title>homeai userManage</title>
-<link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}" />
-<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
-<link rel="stylesheet" type="text/css" th:href="@{/css/userManage.css}" />
+    <meta charset="UTF-8"/>
+    <title>homeai userManage</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/userManage.css}"/>
 </head>
 <body>
-    <div id="userManageContainer">
-        <div>
-            <table>
-                <tr th:each="userInfo:${userInfoList}">
-                    <td><input type="radio" v-mode="selectUser" th:value="${userInfo.getAccoutHa()}" /></td>
-                    <td th:text="${userInfo.getAccoutHa()}"></td>
-                    <td th:text="${userInfo.getNameHa()}"></td>
-                    <td th:text="${userInfo.getAgeHa()}"></td>
-                    <td th:text="${userInfo.getSex()}"></td>
-                    <td th:text="${userInfo.getSysLv()}"></td>
-                    <td th:text="${userInfo.getPasswordHa()}"></td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <button type="button" class="btn" v-on:click="detail">detail</button>
-        </div>
-        <div v-if="disUserFlg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <span>Name</span>
-                        <input type="text" v-model="name" />
-                    </div>
+<div id="userManageContainer">
+    <div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Account</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Level</th>
+                <th>Password</th>
+            </tr>
+            </thead>
+            <tr th:each="userInfo:${userInfoList}">
+                <td><input type="radio" v-model="selectUser" th:value="${userInfo.getAccoutHa()}"/></td>
+                <td th:text="${userInfo.getAccoutHa()}"></td>
+                <td th:text="${userInfo.getNameHa()}"></td>
+                <td th:text="${userInfo.getAgeHa()}"></td>
+                <td th:text="${userInfo.getSex()}"></td>
+                <td th:text="${userInfo.getSysLv()}"></td>
+                <td th:text="${userInfo.getPasswordHa()}"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button type="button" class="btn" v-on:click="detail">detail</button>
+    </div>
+    <div v-if="disUserFlg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <span>Name</span>
+                    <input type="text" v-model="name"/>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <span>Sex</span>
-                        <span>male</span>
-                        <input type="radio" value="0" v-model="sex" />
-                        <span>female</span>
-                        <input type="radio" value="1" v-model="sex" />
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <span>Sex</span>
+                    <span>male</span>
+                    <input type="radio" value="0" v-model="sex"/>
+                    <span>female</span>
+                    <input type="radio" value="1" v-model="sex"/>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <span>Age</span>
-                        <input type="text" v-model="age" />
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <span>Age</span>
+                    <input type="text" v-model="age"/>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <span>Level</span>
-                        <input type="text" v-model="level" />
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <span>Level</span>
+                    <input type="text" v-model="level"/>
                 </div>
-                <div class="row row-margin-top">
-                    <div class="col-lg-4 text-center">
-                        <button type="button" class="btn" v-on:click="update">update</button>
-                        <button type="button" class="btn" v-on:click="delete">Delete</button>
-                    </div>
+            </div>
+            <div class="row row-margin-top">
+                <div class="col-lg-4 text-center">
+                    <button type="button" class="btn" v-on:click="updateUser">update</button>
+                    <button type="button" class="btn" v-on:click="deleteUser">Delete</button>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
-    <script type="text/javascript" th:src="@{/js/common.js}"></script>
-    <script type="text/javascript">
-        ctxPath = '[[@{/}]]';
-        homeAiLoadJs(['js/userManage.js']);
-    </script>
+</div>
+<script type="text/javascript" th:src="@{/js/lazyload.js}"></script>
+<script type="text/javascript" th:src="@{/js/common.js}"></script>
+<script type="text/javascript">
+    ctxPath = '[[@{/}]]';
+    homeAiLoadJs(['js/userManage.js']);
+</script>
 </body>
 </html>

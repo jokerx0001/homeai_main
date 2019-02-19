@@ -21,4 +21,11 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
      * @return
      */
     UserInfo findByAccoutHa(String accoutHa);
+
+    /**
+     *
+     * @param accoutHa
+     * @return
+     */
+    void deleteByAccoutHa(String accoutHa);
 }

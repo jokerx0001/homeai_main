@@ -74,4 +74,48 @@ public class UserController {
 
         return serverResult;
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ServerResult updateUser(UserRegister userRegister) {
+
+        ServerResult serverResult = new ServerResult();
+        UserInfo userInfo = null;
+
+        if (userRegister != null) {
+
+            userInfo = userInfoService.searchUserInfo(userRegister.getAccount());
+            userInfo.setAccoutHa(userRegister.getAccount());
+            userInfo.setNameHa(userRegister.getName());
+            userInfo.setAgeHa(userRegister.getAge());
+            userInfo.setSex(userRegister.getSex());
+            userInfo.setSysLv(1);
+
+            userInfo = userInfoService.updateUser(userInfo);
+        }
+
+        if (userInfo != null) {
+
+            serverResult.setStatus(0);
+            serverResult.setMessage("insert OK");
+            serverResult.setData(userInfo);
+        }
+
+        return serverResult;
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    public ServerResult deleteUser(String account) {
+
+        ServerResult serverResult = new ServerResult();
+
+        if (account != null) {
+
+            userInfoService.deleteUser(account);
+        }
+
+        serverResult.setStatus(0);
+        serverResult.setMessage("delete OK");
+
+        return serverResult;
+    }
 }

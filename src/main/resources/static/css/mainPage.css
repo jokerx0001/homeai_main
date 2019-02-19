@@ -2,10 +2,10 @@
  * login.css
  */
 
-.home-ai-title {
-    margin-top: 60px;
-}
-
-.passwordSub {
-    margin-left: 35px;
+.mainContentIframe {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 1800px;
+    height: 800px;
+    border: none;
 }

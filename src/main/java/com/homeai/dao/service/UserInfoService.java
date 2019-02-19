@@ -3,7 +3,7 @@ package com.homeai.dao.service;
 import java.util.List;
 
 import com.homeai.dao.entity.UserInfo;
-import com.homeai.login.pojo.User;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface UserInfoService {
 
@@ -32,8 +32,23 @@ public interface UserInfoService {
 
     /**
      *
-     * @param user
+     * @param userInfo
      * @return
      */
     public UserInfo insertUser(UserInfo userInfo);
+
+    /**
+     *
+     * @param userInfo
+     * @return
+     */
+    public UserInfo updateUser(UserInfo userInfo);
+
+    /**
+     *
+     * @param account
+     * @return
+     */
+    @Transactional
+    public void deleteUser(String account);
 }
