@@ -11,14 +11,14 @@ var loginContainerVue = new Vue({
 	},
 	methods : {
 		login : function() {
-			var that = this
+
 			$.ajax({
 				type : 'GET',
 				url : ctxPath + 'token',
 				dataType : 'json',
 				data : {
-					account : that.account,
-					password : that.password
+					account : this.account,
+					password : this.password
 				},
 				success : function(data) {
 					// TODO
