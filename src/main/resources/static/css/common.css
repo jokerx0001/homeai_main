@@ -2,6 +2,14 @@
  * common.css
  */
 
- .row-margin-top {
+.row div {
     margin-top: 20px;
+}
+
+.btn button {
+    height: 40px;
+}
+
+.nomalBtn {
+    width: 80px;
 }

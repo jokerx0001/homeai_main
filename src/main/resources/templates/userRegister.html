@@ -11,43 +11,68 @@
 	<form th:action="@{/login}" th:object="${userRegister}" method="get">
 	<div id="registerContainerDiv" class="container">
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4 text-center"><h3>Homeai Register</h3></div>
+			<div class="col-lg-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-1">
 				<span>Account</span>
+			</div>
+			<div class="col-lg-3">
 				<input type="text" v-model="account" />
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-1">
 				<span>Password</span>
+			</div>
+			<div class="col-lg-3">
 				<input type="text" v-model="password" />
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-1">
 				<span>Name</span>
+			</div>
+			<div class="col-lg-3">
 				<input type="text" v-model="name" />
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-1">
 				<span>Sex</span>
+			</div>
+			<div class="col-lg-3">
 				<span>male</span>
 				<input type="radio" value="0" v-model="sex" />
 				<span>female</span>
 				<input type="radio" value="1" v-model="sex" />
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-1">
 				<span>Age</span>
+			</div>
+			<div class="col-lg-3">
 				<input type="text" v-model="age" />
 			</div>
+			<div class="col-lg-4"></div>
 		</div>
 		<div class="row row-margin-top">
             <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
             <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-center">
-                <button type="button" class="btn" v-on:click="register">Register</button>
-                <button type="submit" class="btn">cancel</button>
+                <button type="button" class="btn btn-success nomalBtn" v-on:click="register">Register</button>
+                <button type="submit" class="btn btn-primary nomalBtn">cancel</button>
             </div>
             <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></div>
         </div>

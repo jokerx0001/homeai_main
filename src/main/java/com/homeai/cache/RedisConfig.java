@@ -45,7 +45,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 	@Bean
 	public CacheManager cacheManager(RedisConnectionFactory factory) {
 		RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-				.entryTtl(Duration.ofSeconds(30)).disableCachingNullValues()
+				.entryTtl(Duration.ofMinutes(10)).disableCachingNullValues()
 				.serializeValuesWith(RedisSerializationContext.SerializationPair
 						.fromSerializer(new GenericJackson2JsonRedisSerializer()));
 		RedisCacheManager rcm = RedisCacheManager.builder(factory).cacheDefaults(cacheConfiguration).build();

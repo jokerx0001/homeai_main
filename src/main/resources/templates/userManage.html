@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>homeai userManage</title>
@@ -34,43 +34,59 @@
         </table>
     </div>
     <div>
-        <button type="button" class="btn" v-on:click="detail">detail</button>
+        <button type="button" class="btn btn-info nomalBtn" v-on:click="detail">detail</button>
     </div>
-    <div v-if="disUserFlg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <span>Name</span>
-                    <input type="text" v-model="name"/>
-                </div>
+    <div v-if="disUserFlg" class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1">
+                <span>Name</span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <span>Sex</span>
-                    <span>male</span>
-                    <input type="radio" value="0" v-model="sex"/>
-                    <span>female</span>
-                    <input type="radio" value="1" v-model="sex"/>
-                </div>
+            <div class="col-lg-3">
+                <input type="text" v-model="name"/>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <span>Age</span>
-                    <input type="text" v-model="age"/>
-                </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1">
+                <span>Sex</span>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <span>Level</span>
-                    <input type="text" v-model="level"/>
-                </div>
+            <div class="col-lg-3">
+                <span>male</span>
+                <input type="radio" value="0" v-model="sex"/>
+                <span>female</span>
+                <input type="radio" value="1" v-model="sex"/>
             </div>
-            <div class="row row-margin-top">
-                <div class="col-lg-4 text-center">
-                    <button type="button" class="btn" v-on:click="updateUser">update</button>
-                    <button type="button" class="btn" v-on:click="deleteUser">Delete</button>
-                </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1">
+                <span>Age</span>
             </div>
+            <div class="col-lg-3">
+                <input type="text" v-model="age"/>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1">
+                <span>Level</span>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" v-model="level"/>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 text-center">
+                <button type="button" class="btn btn-warning nomalBtn" v-on:click="updateUser">update</button>
+                <button type="button" class="btn btn-danger nomalBtn" v-on:click="deleteUser">Delete</button>
+            </div>
+            <div class="col-lg-4"></div>
         </div>
     </div>
 </div>
