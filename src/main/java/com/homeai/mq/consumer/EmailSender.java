@@ -5,11 +5,11 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = "hello")
-public class HelloReceiver {
+@RabbitListener(queues = "register")
+public class EmailSender {
 
     @RabbitHandler
-    public void process(String hello) {
-        System.out.println("Receiver  : " + hello);
+    public void process(String msg) {
+        System.out.println("email send to  : " + msg);
     }
 }

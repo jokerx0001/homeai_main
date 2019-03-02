@@ -1,6 +1,7 @@
 package com.hoimeai;
 
-import com.homeai.mq.producer.HelloSender;
+import com.homeai.entity.User;
+import com.homeai.mq.producer.RegisterInfoSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class homeaiMainApplicationTests {
 
 	@Autowired
-	private HelloSender helloSender;
+	private RegisterInfoSender registerInfoSender;
 
 	@Test
 	public void hello() throws Exception {
-		helloSender.send();
+		registerInfoSender.send(new User());
 	}
 
 }

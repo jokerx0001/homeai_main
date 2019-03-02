@@ -1,6 +1,8 @@
 package com.homeai.entity;
 
-public class UserRegister {
+import java.io.Serializable;
+
+public class UserRegister implements Serializable {
 
 	private String account;
 	private String password;

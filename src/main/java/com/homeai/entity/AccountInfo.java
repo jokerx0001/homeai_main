@@ -1,6 +1,8 @@
 package com.homeai.entity;
 
-public class AccountInfo {
+import java.io.Serializable;
+
+public class AccountInfo implements Serializable {
 
     private String account;
     private String password;

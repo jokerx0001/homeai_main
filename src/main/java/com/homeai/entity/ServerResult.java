@@ -1,6 +1,8 @@
 package com.homeai.entity;
 
-public class ServerResult {
+import java.io.Serializable;
+
+public class ServerResult implements Serializable {
 
 	// statu
 	private int status;
@@ -19,7 +21,7 @@ public class ServerResult {
 	}
 
 	/**
-	 * @param statu the statu to set
+	 * @param status the status to set
 	 */
 	public void setStatus(int status) {
 		this.status = status;

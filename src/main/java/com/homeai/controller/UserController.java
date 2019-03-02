@@ -8,6 +8,7 @@ import com.homeai.dao.service.UserInfoService;
 import com.homeai.entity.ServerResult;
 import com.homeai.entity.User;
 import com.homeai.entity.UserRegister;
+import com.homeai.mq.producer.RegisterInfoSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,9 @@ public class UserController {
 
     @Autowired
     private UserInfoService userInfoService;
+
+    @Autowired
+    private RegisterInfoSender registerInfoSender;
 
     @RequestMapping(method = RequestMethod.GET)
     public ServerResult getUser(String account) {
@@ -67,9 +71,16 @@ public class UserController {
 
         if (userInfo != null) {
 
+            User user = new User();
+            user.setName(userInfo.getNameHa());
+            user.setAge(userInfo.getAgeHa());
+            user.setSex(userInfo.getSex());
+            user.setSysLv(userInfo.getSysLv());
+
         	serverResult.setStatus(0);
         	serverResult.setMessage("insert OK");
         	serverResult.setData(userInfo);
+            registerInfoSender.send(user);
         }
 
         return serverResult;
